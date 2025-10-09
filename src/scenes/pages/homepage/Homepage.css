@@ -284,6 +284,7 @@
 }
 .comparison-table th {
   padding-left: 0 !important;
+  padding-bottom: 18px !important;
 }
 .comparison-table {
   background: none !important;
@@ -309,7 +310,255 @@
   font-size: 18px;
 }
 
+#testimonials_section {
+  padding: 61px 0 40px;
+}
+#testimonials_section h2 {
+  max-width: 722px;
+  margin: 0 auto;
+  text-align: center;
+}
+.slider-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.testimonial-text {
+  font-style: italic;
+  margin: 20px 0;
+}
+.testimonial-author {
+  border-top: 1px solid #d3d3e5;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.testimonial-author img {
+  flex-basis: 41px;
+  max-width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testimonial-author div {
+  flex: 1;
+  padding-left: 7px;
+}
+.testimonial-author div h5 {
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+.testimonial-author div span {
+  font-size: 14px;
+  color: #4e5063;
+}
+.testimonial-card {
+  border-radius: 10px;
+  background: #fff;
+  padding: 28px 22px;
+  transition: all 0.2s ease;
+}
+.swiper-custom-wrapper {
+  margin: 0 -200px;
+}
+.swiper-slide-active .testimonial-card {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.swiper-slide {
+  padding: 50px 0;
+}
+.slider-nav button {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  transition: all 0.2s ease;
+}
+.slider-nav button:hover {
+  background: #122241;
+}
+.slider-nav button svg path {
+  transition: all 0.2s ease;
+}
+.slider-nav button:hover svg path {
+  fill: #fff;
+}
+
+.trabel-service-single-all {
+  background: #f8f9fd;
+  background-size: cover;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  position: relative;
+  padding: 32px 29px 16px;
+  min-height: 114px;
+}
+.travel-service-single-all__link {
+  position: absolute !important;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-top-left-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.travel-service-single-all__link::after {
+  content: "";
+  position: absolute;
+  background-image: radial-gradient(
+    circle at 100% 0%,
+    transparent 19px,
+    #fff calc(20px + 1px)
+  );
+  width: 20px;
+  height: 20px;
+  right: 0;
+  bottom: 100%;
+  right: 0;
+  transform: scaleX(-1);
+}
+.travel-service-single-all__link::before {
+  content: "";
+  position: absolute;
+  background-image: radial-gradient(
+    circle at 100% 0%,
+    transparent 19px,
+    #fff calc(20px + 1px)
+  );
+  width: 20px;
+  height: 20px;
+  right: 0;
+  bottom: 0;
+  right: 100%;
+  transform: scaleX(-1);
+}
+.travel-service-featured-div {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  background-color: #f8f9fd;
+  padding: 42px;
+  border-radius: 20px;
+  min-height: 390px;
+}
+.travel-service-featured-div-passport {
+  background-image: url(../../../assets/passport-bg-image.png);
+}
+.travel-service-featured-div-visa {
+  background-image: url(../../../assets/travel-service-visa-bg.png);
+}
+.travel-service-featured-div-evisa {
+  background-image: url(../../../assets/travel-service-evisa-bg.png);
+}
+.travel-service-featured-div__link {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: 30px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.travel-service-featured-div__link::before {
+  content: "";
+  position: absolute;
+  background-image: radial-gradient(
+    circle at 100% 0%,
+    transparent 29px,
+    #fff calc(30px + 1px)
+  );
+  width: 30px;
+  height: 30px;
+  right: 0;
+  bottom: 0;
+  right: 100%;
+  transform: scaleX(-1);
+}
+.travel-service-featured-div__link::after {
+  content: "";
+  position: absolute;
+  background-image: radial-gradient(
+    circle at 100% 0%,
+    transparent 29px,
+    #fff calc(30px + 1px)
+  );
+  width: 30px;
+  height: 30px;
+  right: 0;
+  bottom: 100%;
+  right: 0;
+  transform: scaleX(-1);
+}
+.row-gap {
+  row-gap: 24px;
+}
+.travel-service-header {
+  text-align: center;
+}
+.travel-service-header h2 {
+  max-width: 630px;
+  margin: 0 auto;
+}
+.travel-service-header p {
+  max-width: 616px;
+  margin: 16px auto 29px;
+}
+.travel-button-wrapper {
+  margin-bottom: 46px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+.travel-button-wrapper button {
+  padding: 0 44px;
+  height: 52px;
+  background: #122241;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.2s ease;
+}
+.travel-button-wrapper button.active {
+  background: #be1e2d;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.25);
+}
+
 @media (max-width: 1024px) {
+  .row-gap {
+    row-gap: 20px;
+  }
+  .travel-service-featured-div {
+    align-items: flex-start;
+  }
+  .travel-service-featured-div-passport {
+    background-size: 80% auto;
+  }
+  .trabel-service-single-all {
+    padding: 25px 20px 16px;
+  }
+  .switch-content-all h3 {
+    font-size: 16px;
+  }
+  .switch-content-all-evisa h3 {
+    max-width: 80px;
+  }
   .hero-img {
     margin: 0 -30px;
   }
@@ -348,6 +597,59 @@
 }
 
 @media (max-width: 767px) {
+  .travel-button-wrapper {
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .travel-service-featured-div-visa {
+    background-size: 85% auto !important;
+  }
+  .travel-button-wrapper button {
+    font-size: 14px;
+    padding: 0 28px;
+    height: 45px;
+  }
+  .travel-service-featured-div-passport {
+    background-size: 60% auto;
+  }
+  .travel-service-featured-div {
+    background-size: 70% auto;
+  }
+  .travel-service-featured-div {
+    margin-bottom: 20px;
+    height: auto;
+    padding: 30px 20px;
+    min-height: 250px;
+  }
+  .trabel-service-single-all {
+    border-radius: 10px;
+    min-height: 90px;
+  }
+  .row-gap {
+    row-gap: 10px;
+  }
+  .swiper-slide-active .testimonial-card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  .swiper-slide {
+    padding: 40px 0 30px;
+  }
+  #testimonials_section h2 {
+    margin: 0 20px;
+  }
+  #testimonials_section {
+    padding: 50px 0;
+  }
+  .swiper-custom-wrapper .swiper {
+    padding: 0 20px;
+  }
+  .swiper-custom-wrapper {
+    margin: 0;
+  }
+  .theirs-wrapper,
+  .our-wrapper {
+    gap: 13px;
+  }
   .hero-content h1 {
     font-size: 32px;
   }

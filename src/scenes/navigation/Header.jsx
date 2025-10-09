@@ -13,6 +13,12 @@ export default function Header() {
     setIsActive((prev) => !prev);
   };
 
+  if (isActive) {
+    document.querySelector("body").classList.add("active");
+  } else {
+    document.querySelector("body").classList.remove("active");
+  }
+
   return (
     <div className="header-wrapper">
       <div className="header-info-bar">

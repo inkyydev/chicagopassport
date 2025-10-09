@@ -1,0 +1,295 @@
+.visas-section-all {
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0));
+  padding-bottom: 65px;
+}
+.visas-section-all h1 {
+  max-width: 748px;
+  text-align: center;
+  margin: 0 auto;
+}
+.visas-section-all p {
+  font-weight: 500;
+  max-width: 520px;
+  text-align: center;
+  margin: 12px auto 54px;
+  color: #1c1c1c;
+}
+
+.city-col-all {
+  background-size: cover;
+  min-height: 297px;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+}
+.city-col-all::before {
+  content: "";
+  position: absolute;
+  height: 145px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0), rgba(0, 0, 0, 0));
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.city-col-all h3 {
+  margin-bottom: 0;
+  color: #fff;
+  position: relative;
+  z-index: 9;
+}
+.city-col-all__content {
+  margin-top: auto;
+  margin-left: 17px;
+  margin-bottom: 20px;
+}
+
+.other-div-all {
+  background: #122241;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 39px 42px;
+  background-image: url(../../../assets/other-bg.png);
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+.other-div-all h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 42px;
+  max-width: 329px;
+  margin-bottom: 17px;
+}
+.other-div-all a:hover {
+  color: #fff;
+}
+
+#evisa_single_hero {
+  padding-bottom: 66px;
+}
+#evisa_single_hero,
+#visa_single {
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0));
+}
+.visa-single-header h1 {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.visa-single-header p {
+  font-weight: 500;
+  max-width: 520px;
+  margin: 12px auto 42px;
+  text-align: center;
+  color: #1c1c1c;
+}
+.evisa-single-header img,
+.visa-single-header img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 6;
+  border-radius: 30px;
+}
+#visa_single_requirements {
+  background: #122241;
+  padding-top: 288px;
+  padding-bottom: 69px;
+  margin-top: -210px;
+}
+.visa-requirement {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 59px;
+  border-bottom: 1px solid rgba(211, 211, 229, 0.1);
+  margin-bottom: 59px;
+  gap: 30px;
+}
+.visa-requirement:last-of-type {
+  padding-bottom: 0;
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+.visa-requirement__title {
+  max-width: 488px;
+  flex-basis: 488px;
+}
+.visa-requirement__text {
+  flex: 1;
+}
+.visa-requirement__text ul li {
+  color: #fff;
+}
+.visa-requirement__text p {
+  color: #fff;
+}
+.visa-requirement__text a {
+  margin-top: 10px;
+}
+.visa-requirement__text a:hover {
+  color: #fff;
+}
+.visa-requirement__title h3 {
+  font-size: 42px;
+  color: #fff;
+  max-width: 440px;
+}
+.visa-single-header__img {
+  position: relative;
+}
+.visa-single-header__img::before {
+  content: "";
+  position: absolute;
+  background: url("../../../assets/visas-single-glow.png");
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top center;
+  height: 384px;
+  background-repeat: no-repeat;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.visa-requirements {
+  position: relative;
+  z-index: 9;
+}
+.evisa-single-header p {
+  max-width: 779px;
+  margin: 35px auto 48px;
+}
+#evisa_form {
+  padding-bottom: 60px;
+}
+#evisa_form h2 {
+  max-width: 500px;
+  margin: 0 auto 35px;
+}
+.evisa-application-form {
+  max-width: 592px;
+  margin: 0 auto;
+}
+.evisa-application-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #201e2c;
+  margin-bottom: 6px;
+}
+.evisa-application-form .row {
+  row-gap: 20px;
+}
+.evisa-application-form input:not([type="radio"]) {
+  height: 52px;
+  box-shadow: none;
+  border-color: #e7ecf0;
+  font-size: 14px;
+}
+.radio-wrapper label {
+  margin-bottom: 0;
+}
+.form-button-wrapper {
+  margin-top: 24px;
+}
+.form-button-wrapper button {
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 1024px) {
+  #evisa_single_hero {
+    padding-bottom: 30px;
+  }
+  .other-div-all {
+    padding: 30px 25px;
+  }
+  .other-div-all h3 {
+    font-size: 32px;
+  }
+  .city-col-all {
+    min-height: 200px;
+  }
+  .visas-section-all p {
+    margin: 12px auto 45px;
+  }
+  .visa-requirement__title h3 {
+    font-size: 32px;
+  }
+  .visa-requirement__text,
+  .visa-requirement__title {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+  #visa_single_requirements {
+    padding-top: 200px;
+    margin-top: -140px;
+  }
+}
+@media (max-width: 767px) {
+  #evisa_single_hero {
+    padding-bottom: 0;
+  }
+  .evisa-single-header p {
+    margin: 20px auto 35px;
+  }
+  #visa_single_requirements {
+    padding-bottom: 50px;
+  }
+  .visa-requirement__text ul {
+    margin-top: 20px;
+  }
+  .visa-requirement__text p {
+    margin-bottom: 0;
+  }
+  .visa-requirement__text a {
+    margin-top: 16px;
+  }
+  .visas-section-all p {
+    margin: 12px auto 30px;
+  }
+  .city-col-all {
+    min-height: 280px;
+  }
+  .other-div-all {
+    padding: 30px 20px;
+  }
+  .other-div-all h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  .visas-section-all {
+    padding-bottom: 50px;
+  }
+  .evisa-single-header img,
+  .visa-single-header img {
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+  }
+  #visa_single_requirements {
+    padding-top: 140px;
+    margin-top: -95px;
+  }
+  .visa-requirement {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .visa-requirement__text,
+  .visa-requirement__title {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .visa-requirement {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  .visa-requirement__title h3 {
+    font-size: 28px;
+  }
+}
