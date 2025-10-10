@@ -1,0 +1,124 @@
+#visa_process {
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 35%);
+  padding-bottom: 106px;
+}
+
+#visa_process h1 {
+  max-width: 864px;
+  margin: 0 auto;
+  text-align: center;
+}
+#visa_process .container > p {
+  font-weight: 500;
+  max-width: 656px;
+  margin: 12px auto 89px;
+  text-align: center;
+  color: #1c1c1c;
+}
+.visa-process-img img {
+  border-radius: 30px;
+}
+.visa-process-step-single {
+  border-radius: 40px;
+  padding: 50px;
+}
+.visa-process-step-single .row {
+  align-items: center;
+}
+.visa-process-step-single {
+  position: sticky;
+}
+.visa-process-content p {
+  max-width: 550px;
+}
+.visa-process-step-single-1 {
+  background: #122241;
+  top: 50px;
+}
+.visa-process-step-single-2 {
+  background: #c7e6fd;
+  top: 100px;
+}
+.visa-process-step-single-3 {
+  background: #f8f9fd;
+  top: 150px;
+  transform: translateY(50px);
+}
+
+.visa-process-page .fl-page {
+  overflow: visible !important;
+}
+.vis-proccess-steps-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.visa-process-step-single-1 h2 {
+  color: #fff;
+}
+.visa-process-step-single h2 {
+  margin-bottom: 22px;
+}
+.visa-process-step-single-1 p {
+  color: #fff;
+}
+.visa-process-step-single-1 ul {
+  color: #fff !important;
+}
+.visa-process-content ul {
+  padding-left: 27px;
+  max-width: 534px;
+  color: #4e5063;
+  margin: 20px 0;
+}
+.visa-process-content {
+  padding-left: 25px;
+}
+
+@media (max-width: 1024px) {
+  .visa-process-img img {
+    border-radius: 20px;
+  }
+  .visa-process-content {
+    padding-left: 10px;
+  }
+  .visa-process-step-single {
+    border-radius: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .visa-process-content ul {
+    font-size: 14px;
+    margin: 10px 0 18px;
+  }
+  #visa_process .container > p {
+    margin: 12px auto 30px;
+  }
+  .visa-process-step-single {
+    position: static;
+    border-radius: 20px;
+    padding: 30px 20px;
+  }
+  .visa-process-step-single-3 {
+    transform: none;
+  }
+  .vis-proccess-steps-inner {
+    gap: 20px;
+  }
+  .visa-process-content {
+    padding-left: 0;
+  }
+  .visa-process-step-single .row {
+    flex-direction: column-reverse;
+  }
+  #visa_process {
+    padding-bottom: 10px;
+  }
+  .visa-process-step-single h2 {
+    margin-bottom: 15px;
+  }
+  .visa-process-img {
+    margin-top: 5px;
+  }
+}

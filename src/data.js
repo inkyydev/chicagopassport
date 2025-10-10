@@ -10,6 +10,9 @@ import vietnamImg from "./assets/vietnam-img.png";
 import kenyaImg from "./assets/kenya-img.png";
 import cambodiaImg from "./assets/cambodia-img.png";
 
+import blogImg from "./assets/blog-img.png";
+import authorImg from "./assets/author-img.png";
+
 export const visas = [
   {
     id: 1,
@@ -257,5 +260,238 @@ export const evisas = [
     hero_description:
       "Apply for a Cambodia eVisa without visiting the embassy.",
     hero_image: cambodiaImg,
+  },
+];
+
+export const passportSections = [
+  {
+    title: "New Passport",
+    description:
+      "Whether your passport expired or you’ve never had a passport, everyone will need to apply for a new US passport at some point. For new US passport services in Chicago, choose Chicago Passport & Visa Services.",
+    accordions: [
+      {
+        title: "Requirements for First US Passport Application",
+        text: `
+          <ul>
+            <li>You must be applying for the first time.</li>
+            <li>Your previous passport was issued more than 15 years ago.</li>
+            <li>Your previous passport was issued when you were under 16 years of age.</li>
+          </ul>
+        `,
+      },
+      {
+        title: "How to Apply",
+        text: `
+          <p><a href="https://pptform.state.gov/?Submit2=Complete+Online+%26+Print&AspxAutoDetectCookieSupport=1">DS-11 Online Application</a></p>
+          <ul>
+            <li>Do not sign the application until instructed to do so.</li>
+          </ul>`,
+      },
+      {
+        title: "Government & Service Fees",
+        text: `
+          <ul>
+            <li>A personal check or money order made payable to the “US Department of State” in the amount of $190.00.</li>
+            <li>If you are applying for a US passport with regular services, the check should be made out in the amount of $190.00. Follow this link for the state fee.</li>
+            <li>Temporary/starter checks or checks without a name or address will NOT be accepted.</li>
+          </ul>
+          <p>Chicago Passport & Visa Services fees will be applied in addition to the government fees.</p>
+          `,
+      },
+      {
+        title: "Additional Requirements for New US Passports",
+        text: `
+          <p>
+            <a href="https://chicagopassport-visa.com/us-passport/#additional-requirements">Passport Photos</a>
+            |
+            <a href="https://chicagopassport-visa.com/us-passport/#additional-requirements">Proof of US Citizenship</a>
+            |
+            <a href="https://chicagopassport-visa.com/us-passport/#additional-requirements">Proof of Identity </a>
+            |
+            <a href="https://chicagopassport-visa.com/us-passport/#additional-requirements">Letter of Authorization </a>
+            |
+            <a href="https://chicagopassport-visa.com/us-passport/#additional-requirements">Service Order Form</a>
+            |
+            <a href="https://chicagopassport-visa.com/us-passport/#additional-requirements">Must Appear in Person </a>
+          </p>
+          `,
+      },
+    ],
+  },
+  {
+    title: "Passport Renewal",
+    description:
+      "Renew your passport in Chicago with Chicago Passport & Visa Services. We offer emergency and rush passport services, so if you’re looking to expedite your passport, we have all the same-day solutions for you.",
+    accordions: [
+      {
+        title: "Requirements for US Passport Renewal",
+        text: `
+          <p>Your US Passport can only be renewed if ALL these conditions are met.</p>
+          <ul>
+            <li>You still have your US passport in your possession.</li>
+            <li>Your previous US passport was issued when you were 16 years or over.</li>
+            <li>Your previous US passport was issued no more than 15 years ago.</li>
+            <li>Your US passport is undamaged.</li>
+          </ul>
+        `,
+      },
+      {
+        title: "How to Apply",
+        text: `
+          <a href="https://pptform.state.gov/?Submit2=Complete+Online+%26+Print&AspxAutoDetectCookieSupport=1"/>DS-82 Online Application</a>
+          <ul>
+            <li>Do not sign the application until instructed to do so.</li>
+          </ul>
+        `,
+      },
+    ],
+  },
+  {
+    title: "Child Passport",
+    description:
+      "Children under 16 must apply in person with both parents or legal guardians present.",
+    accordions: [
+      {
+        title: "Parental Consent",
+        text: "Both parents must be present or provide notarized consent forms.",
+      },
+    ],
+  },
+  {
+    title: "Lost Passport",
+    description:
+      "If your passport is lost, stolen, or damaged, you should replace it quickly. Chicago Passport & Visa Services offers lost passport renewal solutions so you have a replacement passport in time for your next trip. Also, canceling a lost passport quickly ensures it can’t be used if it falls into the wrong hands.",
+    accordions: [
+      {
+        title: "Parental Consent",
+        text: "Both parents must be present or provide notarized consent forms.",
+      },
+    ],
+  },
+  {
+    title: "Passport Name Change",
+    description:
+      "Passports must reflect the correct name of the passport holder. Therefore, it’s essential that you receive a new passport due to marriage, divorce, adoption, or other legal reasons from Chicago Passport & Visa Services.",
+    accordions: [
+      {
+        title: "Parental Consent",
+        text: "Both parents must be present or provide notarized consent forms.",
+      },
+    ],
+  },
+  {
+    title: "Second Limited Passport",
+    description:
+      "US citizens are allowed to have two different passports: a normal 10-year passport and a second limited passport. Second limited passports allow holders to travel internationally while processing a US visa. With these specific passports, holders can also travel to countries that don’t allow entry to people to visit if their normal passport has stamps from enemy countries.",
+    accordions: [
+      {
+        title: "Parental Consent",
+        text: "Both parents must be present or provide notarized consent forms.",
+      },
+    ],
+  },
+  {
+    title: "Additional Requirements for US Passports",
+    description: "",
+    accordions: [
+      {
+        title: "Parental Consent",
+        text: "Both parents must be present or provide notarized consent forms.",
+      },
+    ],
+  },
+];
+
+export const blogsData = [
+  {
+    id: 1,
+    slug: "how-to-renew-mexican-passport-in-chicago",
+    title: "How To Renew Mexican Passport In Chicago",
+    excerpt:
+      "Renewing your Mexican passport in Chicago is a simple process, especially if your old one has expired or will expire soon. Here’s a full breakdown of eligibility, documents, and where to go.",
+    featured_image: blogImg,
+    author: {
+      name: "John Doe",
+      avatar: authorImg,
+    },
+    date: "December 4, 2024",
+    content: `
+      <h2>Eligibility Requirements</h2>
+      <p>To renew your Mexican passport in Chicago, you must meet the following conditions:</p>
+      <ul>
+        <li>You are a Mexican citizen.</li>
+        <li>Your passport is expired or will expire within six months.</li>
+        <li>You can provide original and photocopy identification documents.</li>
+      </ul>
+
+      <h2>Required Documents</h2>
+      <ul>
+        <li>Completed passport renewal form.</li>
+        <li>Two recent passport-sized photos.</li>
+        <li>Proof of payment for renewal fee.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <p><strong>Where can I renew my Mexican passport in Chicago?</strong><br>
+      You can renew at the Consulate General of Mexico located in downtown Chicago.</p>
+
+      <p><strong>How long does processing take?</strong><br>
+      Processing times vary between 1–3 weeks depending on demand and appointment availability.</p>
+
+      <p><strong>Can I expedite the process?</strong><br>
+      Yes, some services offer expedited options for an additional fee.</p>
+    `,
+  },
+  {
+    id: 2,
+    slug: "how-to-get-us-passport-renewed-fast",
+    title: "How To Get Your US Passport Renewed Fast",
+    excerpt:
+      "Need your passport in a hurry? Here’s how to renew it quickly, including expedited options and required documentation.",
+    featured_image: blogImg,
+    author: {
+      name: "Sarah Lee",
+      avatar: authorImg,
+    },
+    date: "November 12, 2024",
+    content: `
+      <h2>Step-by-Step Renewal Process</h2>
+      <ol>
+        <li>Complete the DS-82 form.</li>
+        <li>Attach your most recent passport and new photos.</li>
+        <li>Mail it or bring it to an expedited passport agency.</li>
+      </ol>
+
+      <h2>Tips for Faster Processing</h2>
+      <ul>
+        <li>Use overnight shipping both ways.</li>
+        <li>Double-check your application before submission.</li>
+        <li>Book an appointment early if visiting an office.</li>
+      </ul>
+    `,
+  },
+  {
+    id: 3,
+    slug: "visa-photos-guidelines",
+    title: "Visa Photo Requirements: Avoid Common Mistakes",
+    excerpt:
+      "Your visa photo can make or break your application — here’s how to ensure it meets all official standards.",
+    featured_image: blogImg,
+    author: {
+      name: "Michael Chen",
+      avatar: authorImg,
+    },
+    date: "October 10, 2024",
+    content: `
+      <h2>Key Requirements</h2>
+      <ul>
+        <li>White background only.</li>
+        <li>No shadows or filters.</li>
+        <li>Face must be fully visible.</li>
+      </ul>
+
+      <h2>Pro Tip</h2>
+      <p>Always take your photo at a professional studio that specializes in passport or visa photography.</p>
+    `,
   },
 ];

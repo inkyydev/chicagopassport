@@ -376,6 +376,50 @@ div.footer-info__single p {
   margin-top: 9px;
 }
 
+/* pagination */
+.pagination-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.pagination-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-item {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-item:hover,
+.pagination-arrow:hover {
+  background-color: #f3f4f6;
+}
+
+.pagination-item.active {
+  background-color: #122241;
+  color: #fff;
+}
+
+.pagination-item.dots {
+  cursor: default;
+  color: #888;
+}
+
 @media (max-width: 1150px) {
   .header-contact-wrapper a {
     font-size: 14px;
@@ -531,6 +575,7 @@ div.footer-info__single p {
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     padding: 45px 0 25px;
+    overflow: hidden;
   }
   .footer-logo p {
     margin: 20px 0 20px;

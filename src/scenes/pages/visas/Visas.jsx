@@ -35,7 +35,9 @@ export default function Visas() {
             <div className="col-12 col-md-6">
               <div className="other-div-all">
                 <h3>Other Countries Visa</h3>
-                <Link className="btn-all">Contact Us for More</Link>
+                <Link className="btn-all" to="/contact-us">
+                  Contact Us for More
+                </Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 #contact {
   padding-bottom: 107px;
-  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0));
+  background: #f8f9fd;
 }
 .contact-info p {
   max-width: 441px;
@@ -54,4 +54,32 @@
 .contact-form button {
   padding: 12px 59px;
   transition: all 0.2s ease;
+}
+
+body.contact-us-page .header-wrapper {
+  background: #f8f9fd;
+}
+
+@media (max-width: 767px) {
+  #contact {
+    padding-bottom: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-info p {
+    margin: 20px 0;
+  }
+  .contact-details {
+    gap: 12px;
+  }
+  .contact-form {
+    margin-top: 15px;
+  }
+  .contact-form form > div {
+    margin-bottom: 15px;
+  }
+  #contact {
+    padding-bottom: 60px;
+  }
 }

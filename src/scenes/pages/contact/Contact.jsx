@@ -5,8 +5,22 @@ import phoneIcon from "../../../assets/phone-contact-icon.svg";
 import emailIcon from "../../../assets/contact-email-icon.svg";
 
 import "./Contact.css";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Contact() {
+  const navigate = useLocation();
+
+  useEffect(() => {
+    if (navigate.pathname === "/contact-us") {
+      document.querySelector("body").classList.add("contact-us-page");
+    }
+
+    return () => {
+      document.body.classList.remove("contact-us-page");
+    };
+  }, [navigate.pathname]);
+
   return (
     <>
       <section id="contact">

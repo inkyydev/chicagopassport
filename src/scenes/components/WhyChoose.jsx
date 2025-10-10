@@ -77,7 +77,7 @@ export default function WhyChoose() {
                 beginning to end, delivering your travel documents securely and
                 quickly.
               </p>
-              <Link className="btn-all" to="/start">
+              <Link className="btn-all" to="/contact-us">
                 Get Started Today
               </Link>
             </div>

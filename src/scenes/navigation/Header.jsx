@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 
 import phoneIcon from "../../assets/phone-icon.svg";
@@ -13,12 +15,30 @@ export default function Header() {
     setIsActive((prev) => !prev);
   };
 
-  if (isActive) {
-    document.querySelector("body").classList.add("active");
-  } else {
-    document.querySelector("body").classList.remove("active");
-  }
+  useEffect(() => {
+    const body = document.querySelector("body");
 
+    if (isActive && window.innerWidth < 1024) {
+      body.classList.add("active");
+    } else {
+      body.classList.remove("active");
+    }
+
+    const handleResize = () => {
+      if (isActive && window.innerWidth < 1024) {
+        body.classList.add("active");
+      } else {
+        body.classList.remove("active");
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      body.classList.remove("active");
+    };
+  }, [isActive]);
   return (
     <div className="header-wrapper">
       <div className="header-info-bar">
@@ -59,11 +79,19 @@ export default function Header() {
               <div
                 className={`main-nav__items--links ${isActive ? "active" : ""}`}
               >
-                <Link onClick={handleMenu}>US Passport</Link>
-                <Link onClick={handleMenu}>Visas</Link>
-                <Link onClick={handleMenu}>E-Visas</Link>
+                <Link onClick={handleMenu} to="/us-passport">
+                  US Passport
+                </Link>
+                <Link onClick={handleMenu} to="/visas">
+                  Visas
+                </Link>
+                <Link onClick={handleMenu} to="/e-visas">
+                  E-Visas
+                </Link>
                 <Link onClick={handleMenu}>UK ETA Visa</Link>
-                <Link onClick={handleMenu}>Process</Link>
+                <Link onClick={handleMenu} to="/visa-process">
+                  Process
+                </Link>
               </div>
               <div
                 onClick={handleMenu}

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-export default function ContactUsServices() {
+export default function ContactUsServices({ bg }) {
   return (
-    <section id="contact_us_services">
+    <section id="contact_us_services" style={bg ? { background: bg } : {}}>
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">

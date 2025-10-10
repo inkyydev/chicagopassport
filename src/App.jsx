@@ -7,6 +7,10 @@ import VisasSingle from "./scenes/pages/visas/VisasSingle";
 import Evisas from "./scenes/pages/visas/Evisas";
 import EvisasSingle from "./scenes/pages/visas/EvisasSingle";
 import Contact from "./scenes/pages/contact/Contact";
+import VisaProcess from "./scenes/pages/visa-process/VisaProcess";
+import UsPassport from "./scenes/pages/us-passport/UsPassport";
+import Blog from "./scenes/pages/blog/BlogPage";
+import BlogSinglePage from "./scenes/pages/blog/BlogSinglePage";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +22,10 @@ const router = createBrowserRouter([
       { path: "/e-visas", element: <Evisas /> },
       { path: "/e-visas/:slug", element: <EvisasSingle /> },
       { path: "/contact-us", element: <Contact /> },
+      { path: "/visa-process", element: <VisaProcess /> },
+      { path: "/us-passport", element: <UsPassport /> },
+      { path: "/blog", element: <Blog /> },
+      { path: "/blog/:slug", element: <BlogSinglePage /> },
     ],
   },
 ]);

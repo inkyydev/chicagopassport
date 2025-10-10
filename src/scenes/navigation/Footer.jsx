@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import footerLogo from "../../assets/footer-logo.svg";
-import linkedinIcon from "../../assets/linkedin-icon.svg";
+import facebookIcon from "../../assets/facebook-icon.svg";
 import instagramIcon from "../../assets/instagram-icon.svg";
 import mailIcon from "../../assets/email-icon.svg";
 import phoneIcon from "../../assets/phone-icon.svg";
@@ -21,12 +21,18 @@ export default function Footer() {
               travel document solutions since day one.
             </p>
             <div className="footer-social-media">
-              <Link>
-                <img src={linkedinIcon} alt="linkedin" />
-              </Link>
-              <Link>
+              <a
+                href="https://www.facebook.com/ChicagoPassportServices"
+                target="_blank"
+              >
+                <img src={facebookIcon} alt="linkedin" />
+              </a>
+              <a
+                href="https://www.instagram.com/chicagopassportvisaservices/"
+                target="_blank"
+              >
                 <img src={instagramIcon} alt="instagram" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -44,12 +50,12 @@ export default function Footer() {
             <h4>Quick Links</h4>
             <div className="separator"></div>
             <div className="footer-links">
-              <Link>Home</Link>
-              <Link>US Passport</Link>
-              <Link>Visas</Link>
-              <Link>E-Visas</Link>
+              <Link to="/">Home</Link>
+              <Link to="/us-passport">US Passport</Link>
+              <Link to="/visas">Visas</Link>
+              <Link to="/e-visas">E-Visas</Link>
               <Link>UK ETA Visa</Link>
-              <Link>Blog</Link>
+              <Link to="/blog">Blog</Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .visas-section-all {
-  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0));
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 45%);
   padding-bottom: 65px;
 }
 .visas-section-all h1 {
@@ -77,7 +77,7 @@
 }
 #evisa_single_hero,
 #visa_single {
-  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0));
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 60%);
 }
 .visa-single-header h1 {
   text-align: center;

@@ -1,0 +1,178 @@
+#us_passport {
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 35%);
+  padding-bottom: 82px;
+}
+.us-passport-header h1 {
+  max-width: 748px;
+  margin: 0 auto;
+}
+.us-passport-header {
+  text-align: center;
+}
+.us-passport-header p {
+  font-weight: 500;
+  color: #1c1c1c;
+  max-width: 520px;
+  margin: 12px auto 42px;
+}
+
+.us-passport-header img {
+  border-radius: 30px;
+}
+
+.button-switch-all-passport {
+  display: flex;
+  margin: 46px 0 68px;
+  padding-bottom: 54px;
+  border-bottom: 1px solid #d3d3e5;
+  gap: 13px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.button-switch-all-passport button {
+  background: #122241;
+  border-radius: 10px;
+  min-height: 52px;
+  padding: 0 23px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+}
+.button-switch-all-passport button.active {
+  background: #be1e2d;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+}
+.passport-content-text h2 {
+  margin-bottom: 16px;
+}
+.passport-content-text p {
+  max-width: 456px;
+}
+.accordion-single.open {
+  background: #122241;
+}
+.accordion-single * {
+  transition: all 0.2s ease;
+}
+.accordion-single.open * {
+  color: #fff;
+}
+.accordion-single {
+  background: #f8f9fd;
+  border-radius: 20px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.accordion-single__title {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding: 25px 34px;
+}
+.accordion-single__title h3 {
+  margin-bottom: 0;
+  flex: 1;
+}
+.accordion-single.open span {
+  border-color: #fff;
+}
+.accordion-single__title span {
+  width: 24px;
+  height: 24px;
+  flex-basis: 24px;
+  max-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #1c1c1c;
+  border-radius: 50%;
+}
+.accordion-all {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 624px;
+  margin-left: auto;
+}
+.accordion-single__text {
+  padding-left: 82px;
+  padding-right: 41px;
+  padding-bottom: 20px;
+}
+.accordion-single__text ul {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+.accordion-single__text a {
+  text-decoration: underline;
+}
+.accordion-single__text a:hover {
+  color: #be1e2d !important;
+}
+
+@media (max-width: 1024px) {
+  .button-switch-all-passport button {
+    font-size: 16px;
+  }
+  .accordion-single__title h3 {
+    font-size: 18px;
+  }
+  .accordion-single__text {
+    padding-left: 20px;
+  }
+  .accordion-single__title {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .button-switch-all-passport button {
+    font-size: 14px;
+    min-height: 45px;
+    padding: 0 15px;
+  }
+  .us-passport-header p {
+    margin: 12px auto 30px;
+  }
+  .us-passport-header img {
+    border-radius: 20px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .button-switch-all-passport {
+    margin: 35px 0 25px;
+    padding-bottom: 35px;
+  }
+  #us_passport {
+    padding-bottom: 55px;
+  }
+  .passport-content-text {
+    margin-bottom: 25px;
+  }
+  .accordion-single__title {
+    gap: 15px;
+  }
+  .accordion-single__title {
+    padding: 20px;
+  }
+  .accordion-single__text ul {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  .accordion-single__title h3 {
+    font-size: 16px;
+  }
+  .accordion-single {
+    border-radius: 15px;
+  }
+}

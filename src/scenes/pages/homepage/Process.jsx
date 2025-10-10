@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ProcessSection() {
   return (
     <section id="process">
@@ -40,9 +42,9 @@ export default function ProcessSection() {
           </div>
         </div>
         <div className="start-btn-wrapper text-center">
-          <a href="#" className="btn-all">
+          <Link to="/visa-process" className="btn-all">
             Start Your Application
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -96,7 +96,7 @@ export default function TravelService() {
                   <div className="travel-service-featured-div travel-service-featured-div-passport">
                     <h3>New Passport</h3>
                     <div className="travel-service-featured-div__link">
-                      <Link>
+                      <Link to="/us-passport">
                         <img src={btnRed} alt="btn" />
                       </Link>
                     </div>
@@ -126,7 +126,7 @@ export default function TravelService() {
                             )}
                           </h3>
                           <div className="travel-service-single-all__link">
-                            <Link>
+                            <Link to="/us-passport">
                               <img src={btnRed} alt="btn" />
                             </Link>
                           </div>

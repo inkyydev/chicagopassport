@@ -104,7 +104,9 @@ export default function ComparisonTable() {
           </table>
         </div>
         <div className="text-center">
-          <Link className="btn-all">Start My Application</Link>
+          <Link className="btn-all" to="/us-passport">
+            Start My Application
+          </Link>
         </div>
       </div>
     </section>
