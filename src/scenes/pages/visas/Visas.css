@@ -72,22 +72,22 @@
   color: #fff;
 }
 
-#evisa_single_hero {
-  padding-bottom: 66px;
-}
 #evisa_single_hero,
 #visa_single {
   background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 60%);
 }
 .visa-single-header h1 {
   text-align: center;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
+}
+.requirements-single-evisa-heading h2 {
+  max-width: 481px;
 }
 .visa-single-header p {
   font-weight: 500;
   max-width: 520px;
-  margin: 12px auto 42px;
+  margin: 12px auto 25px;
   text-align: center;
   color: #1c1c1c;
 }
@@ -143,21 +143,7 @@
 }
 .visa-single-header__img {
   position: relative;
-}
-.visa-single-header__img::before {
-  content: "";
-  position: absolute;
-  background: url("../../../assets/visas-single-glow.png");
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top center;
-  height: 384px;
-  background-repeat: no-repeat;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
+  margin-top: 45px;
 }
 .visa-requirements {
   position: relative;
@@ -165,7 +151,10 @@
 }
 .evisa-single-header p {
   max-width: 779px;
-  margin: 35px auto 48px;
+  margin: 15px auto 30px;
+}
+.evisa-single-header a {
+  margin-bottom: 45px;
 }
 #evisa_form {
   padding-bottom: 60px;
@@ -202,7 +191,20 @@
 .form-button-wrapper button {
   transition: all 0.2s ease;
 }
-
+.requirements-wrapper-single-visa {
+  padding-bottom: 94px;
+}
+.visa-single-bg-full {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: url(../../../assets/visa-full-image.png);
+  height: 427px;
+  background-size: cover;
+}
+.requirements-single-visa-heading {
+  position: sticky;
+  top: 50px;
+}
 @media (max-width: 1024px) {
   #evisa_single_hero {
     padding-bottom: 30px;
@@ -233,11 +235,20 @@
   }
 }
 @media (max-width: 767px) {
+  .visa-single-bg-full {
+    height: 150px;
+  }
+  .requirements-wrapper-single-visa {
+    padding-bottom: 50px;
+  }
+  .requirements-single-visa-heading h2 {
+    margin-bottom: 25px;
+  }
   #evisa_single_hero {
     padding-bottom: 0;
   }
   .evisa-single-header p {
-    margin: 20px auto 35px;
+    margin: 20px auto 20px;
   }
   #visa_single_requirements {
     padding-bottom: 50px;

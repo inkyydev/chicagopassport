@@ -1,17 +1,22 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import ContactUsServices from "../../components/ContactUsServices";
-import Map from "../../components/Map";
+import ImagePassport from "../../components/ImagePassport";
 
 import usPassportImg from "../../../assets/us-passport-img.png";
 
 import { passportSections } from "../../../data";
+import Plans from "../../components/Plans";
 
 import "./UsPassport.css";
 
 export default function UsPassport() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const location = useLocation();
+  const defaultIndex = location.state?.activeIndex || 0;
+  const [activeIndex, setActiveIndex] = useState(defaultIndex);
   const activeItem = passportSections[activeIndex];
+
   return (
     <>
       <section id="us_passport">
@@ -25,16 +30,24 @@ export default function UsPassport() {
             <img src={usPassportImg} alt="us passport" />
           </div>
           <div className="button-switch-all-passport">
-            {passportSections.map((item, index) => (
-              <button
-                key={index}
-                className={activeIndex === index ? "active" : ""}
-                onClick={() => setActiveIndex(index)}
-              >
-                {item.title}
-              </button>
-            ))}
+            <h2>Select passport type</h2>
+            <div className="us-passport-type-wrapper passport-wrapper-all">
+              {passportSections.map((item, index) => (
+                <label key={index} className="passport-radio-label">
+                  <input
+                    type="radio"
+                    name="passport-section"
+                    checked={activeIndex === index}
+                    onChange={() => setActiveIndex(index)}
+                  />
+                  <div>
+                    <span>{item.title}</span>
+                  </div>
+                </label>
+              ))}
+            </div>
           </div>
+          <Plans isShown={activeIndex === 1 || activeIndex === 4} />
           <div className="switch-content-all-passport">
             <div className="row">
               <div className="col-12 col-md-5">
@@ -59,8 +72,9 @@ export default function UsPassport() {
           </div>
         </div>
       </section>
-      <ContactUsServices bg="#F8F9FD" />
-      <Map />
+      <div className="visa-single-bg-full"></div>
+      <ContactUsServices />
+      <ImagePassport />
     </>
   );
 }

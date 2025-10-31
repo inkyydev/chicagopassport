@@ -107,11 +107,10 @@ export default function TravelService() {
                   <div className="row row-gap">
                     {[
                       "Passport Renewal",
-                      "Lost/Stolen Passport",
-                      "Damaged Passport",
-                      "Passport Card",
-                      "Child Passport",
-                      "Passport Name Change",
+                      "Child passport",
+                      "Lost Passport",
+                      "Passport Name change",
+                      "Second Limited Passport",
                     ].map((label, i) => (
                       <div className="col-12 col-md-6" key={i}>
                         <div className="trabel-service-single-all">
@@ -126,7 +125,10 @@ export default function TravelService() {
                             )}
                           </h3>
                           <div className="travel-service-single-all__link">
-                            <Link to="/us-passport">
+                            <Link
+                              to="/us-passport"
+                              state={{ activeIndex: i + 1 }}
+                            >
                               <img src={btnRed} alt="btn" />
                             </Link>
                           </div>

@@ -1,9 +1,24 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import glowImg from "../../../assets/green-glow-img.png";
 import heroImg from "../../../assets/hero-img.png";
 
 export default function Hero() {
   const [chooseValue, setChooseValue] = useState("passport");
+  const [activeIndexValue, setActiveIndexValue] = useState(0);
+  const [activeValueVisa, setActiveValueVisa] = useState("");
+  const [activeValueEVisa, setActiveValueEVisa] = useState("");
+
+  const handleChange = (e) => {
+    setActiveIndexValue(e.target.value);
+  };
+
+  const handleVisaChange = (e) => {
+    setActiveValueVisa(e.target.value);
+  };
+  const handleEVisaChange = (e) => {
+    setActiveValueEVisa(e.target.value);
+  };
 
   return (
     <section id="hero_section">
@@ -61,15 +76,26 @@ export default function Hero() {
                 {chooseValue === "passport" && (
                   <div className="get-started-wrapper">
                     <div className="get-started-wrapper__inner">
-                      <select name="" id="">
-                        <option value="" disabled selected>
+                      <select name="" id="" onChange={handleChange}>
+                        <option value="" disabled>
                           Choose
                         </option>
-                        <option value="">Option 1</option>
-                        <option value="">Option 2</option>
-                        <option value="">Option 3</option>
+                        <option value="0">New Passport</option>
+                        <option value="1">Passport Renewal</option>
+                        <option value="2">Child Passport</option>
+                        <option value="3">Lost Passport</option>
+                        <option value="4">Passport Name Change</option>
+                        <option value="5">Second Limited Passport</option>
+                        <option value="6">
+                          Additional Requirements for US Passports
+                        </option>
                       </select>
-                      <button type="submit">Get Started</button>
+                      <Link
+                        to="/us-passport"
+                        state={{ activeIndex: Number(activeIndexValue) }}
+                      >
+                        Get Started
+                      </Link>
                     </div>
                   </div>
                 )}
@@ -93,13 +119,18 @@ export default function Hero() {
                       </div>
                       <div className="get-visa-options__all--single">
                         <span>Traveling to:</span>
-                        <select name="citizen">
-                          <option value="usa">USA</option>
+                        <select name="citizen" onChange={handleVisaChange}>
                           <option value="china">China</option>
+                          <option value="ghana">Ghana</option>
+                          <option value="brazil">Brazil</option>
+                          <option value="uk">UK</option>
+                          <option value="nigeria">Nigeria</option>
                         </select>
                       </div>
                     </div>
-                    <button type="submit">Get Visa Options</button>
+                    <Link to={`/visas/${activeValueVisa}`}>
+                      Get Visa Options
+                    </Link>
                   </div>
                 )}
 
@@ -115,13 +146,18 @@ export default function Hero() {
                       </div>
                       <div className="get-visa-options__all--single">
                         <span>Traveling to:</span>
-                        <select name="citizen">
-                          <option value="usa">USA</option>
-                          <option value="china">China</option>
+                        <select name="citizen" onChange={handleEVisaChange}>
+                          <option value="india-evisa">India Visa</option>
+                          <option value="brazil-evisa">Brazil Visa</option>
+                          <option value="vietnam-evisa">Vietnam Visa</option>
+                          <option value="kenya-evisa">Kenya Visa</option>
+                          <option value="cambodia-evisa">Cambodia Visa</option>
                         </select>
                       </div>
                     </div>
-                    <button type="submit">Get Visa Options</button>
+                    <Link to={`/e-visas/${activeValueEVisa}`}>
+                      Get Visa Options
+                    </Link>
                   </div>
                 )}
               </form>

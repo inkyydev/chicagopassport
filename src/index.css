@@ -10,7 +10,7 @@ body.active {
 }
 
 .fl-page {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 ::selection {
@@ -419,6 +419,126 @@ div.footer-info__single p {
   cursor: default;
   color: #888;
 }
+/* passport radio wrapper */
+.button-switch-all-passport h2 {
+  margin-bottom: 20px;
+}
+.passport-wrapper-all {
+  display: flex;
+  gap: 27px;
+  width: 100%;
+}
+.passport-wrapper-all label {
+  flex: 1;
+}
+.passport-wrapper-all input {
+  visibility: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.passport-wrapper-all div {
+  background: #c7e6fd;
+  display: block;
+  font-size: 14px;
+  border-radius: 15px;
+  font-weight: 500;
+  height: 100%;
+  min-height: 110px;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+.passport-wrapper-all div::before {
+  content: "";
+  position: absolute;
+  background-image: url(./assets/radio-no-checked.svg);
+  width: 21px;
+  height: 21px;
+  top: 10px;
+  right: 10px;
+}
+.passport-wrapper-all input:checked ~ div::before {
+  background-image: url(./assets/radio-checked.svg);
+}
+.passport-wrapper-all input:checked ~ div {
+  background: #122241;
+  color: #fff;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+}
+.passport-wrapper-all div span {
+  line-height: 1.3;
+}
+.plans-wrapper-all h3 {
+  font-size: 26px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.plans-wrapper-all > p {
+  max-width: 612px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+.passport-plans {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d3d3e5;
+  padding-bottom: 83px;
+  margin-bottom: 63px;
+  gap: 32px;
+}
+.passport-plan-single {
+  background: #f8f9fd;
+  flex-basis: calc(25% - 24px);
+  max-width: calc(25% - 24px);
+  border-radius: 15px;
+  padding: 38px 22px 23px;
+}
+.passport-plan-single h4 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.passport-plan-single > p {
+  text-align: center;
+  font-size: 14px;
+}
+.passport-plan-single a {
+  background: #be1e2d;
+  border: 1px solid #be1e2d;
+  display: flex;
+  height: 48px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+}
+.passport-plan-single a:hover {
+  background: transparent;
+  color: #1c1c1c;
+}
+.plan-price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.plan-price-wrapper p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.plan-price-wrapper span {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1c1c1c;
+}
 
 @media (max-width: 1150px) {
   .header-contact-wrapper a {
@@ -526,6 +646,21 @@ div.footer-info__single p {
   #contact_us_services {
     padding: 80px 0;
   }
+  .passport-wrapper-all {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .passport-wrapper-all label {
+    flex-basis: calc(20% - 8px);
+    max-width: calc(20% - 8px);
+  }
+  .passport-plans {
+    gap: 20px;
+  }
+  .passport-plan-single {
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
 }
 
 @media (max-width: 767px) {
@@ -626,5 +761,35 @@ div.footer-info__single p {
   }
   .contact-us-services-title h2 {
     margin-bottom: 20px;
+  }
+  .passport-wrapper-all {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .passport-wrapper-all label {
+    flex-basis: calc(50% - 5px);
+    max-width: calc(50% - 5px);
+  }
+  .passport-plans {
+    gap: 20px;
+  }
+  .passport-plan-single {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  .passport-wrapper-all div {
+    font-size: 12px;
+    min-height: 90px;
+    border-radius: 10px;
+  }
+  .plans-wrapper-all > p {
+    margin: 0 auto 25px;
+  }
+  .passport-plan-single {
+    padding: 30px 20px 20px;
+  }
+  .passport-plans {
+    padding-bottom: 45px;
+    margin-bottom: 40px;
   }
 }

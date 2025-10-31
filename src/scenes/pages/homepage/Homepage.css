@@ -79,7 +79,7 @@
   align-items: center;
   gap: 20px;
 }
-.hero-content button {
+.hero-content a {
   font-size: 14px;
   background: #be1e2d;
   border: 1px solid #be1e2d;
@@ -90,8 +90,11 @@
   height: 45px;
   border-radius: 6px;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.hero-content button:hover {
+.hero-content a:hover {
   background: transparent;
   color: #1c1c1c;
 }
@@ -109,6 +112,7 @@
   font-size: 14px;
   padding-left: 10px;
   color: #4e5063;
+  padding-right: 10px;
 }
 .hero-content > span {
   color: #1c1c1c;
@@ -685,12 +689,12 @@
     padding: 18px 13px 13px;
   }
   .get-started-wrapper__inner select,
-  .hero-content button {
+  .hero-content a {
     width: 100%;
     flex-basis: 100%;
     max-width: 100%;
   }
-  .hero-content button {
+  .hero-content a {
     height: 50px;
     min-height: 50px;
   }

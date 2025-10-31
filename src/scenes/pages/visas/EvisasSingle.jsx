@@ -1,120 +1,122 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { evisas } from "../../../data";
+import Plans from "../../components/Plans";
 
+import ImagePassport from "../../components/ImagePassport";
+import ContactUsServices from "../../components/ContactUsServices";
 import Map from "../../components/Map";
 
 export default function EvisasSingle() {
   const { slug } = useParams();
-  const evisa = evisas.find((v) => v.slug === slug);
+  const navigate = useNavigate();
+
+  // Find initial index based on slug
+  const initialIndex = evisas.findIndex((v) => v.slug === slug);
+  const [activeIndex, setActiveIndex] = useState(
+    initialIndex >= 0 ? initialIndex : 0
+  );
+
+  // Update URL on switch
+  useEffect(() => {
+    navigate(`/e-visas/${evisas[activeIndex].slug}`, { replace: true });
+  }, [activeIndex]);
+
+  const evisa = evisas[activeIndex];
 
   if (!evisa) return <p>eVisa not found.</p>;
 
-  const form = evisa.application_form;
-
   return (
     <>
+      {/* Hero Section */}
       <section id="evisa_single_hero">
         <div className="container">
           <div className="evisa-single-header text-center">
             <h1>{evisa.hero_title}</h1>
             <p>{evisa.hero_description}</p>
+            <a href="#get_started" className="btn-all">
+              Get Started Today
+            </a>
             <img src={evisa.hero_image} alt={evisa.hero_title} />
           </div>
+
+          {/* Country Switch */}
+          <div id="get_started" className="button-switch-all-passport">
+            <h2>Select eVisa Country</h2>
+            <div className="passport-wrapper-all">
+              {evisas.map((v, index) => (
+                <label key={index} className="passport-radio-label">
+                  <input
+                    type="radio"
+                    name="evisa-country"
+                    checked={activeIndex === index}
+                    onChange={() => setActiveIndex(index)}
+                  />
+                  <div>
+                    <span>{v.country}</span>
+                  </div>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <Plans />
+
+          {/* Requirements */}
+          {evisa.requirements && evisa.requirements.length > 0 && (
+            <div className="requirements-wrapper-single-visa">
+              <div className="row">
+                <div className="col-12 col-md-6">
+                  <div className="requirements-single-visa-heading requirements-single-evisa-heading">
+                    <h2>{evisa.country} Requirements</h2>
+                  </div>
+                </div>
+                <div className="col-12 col-md-6">
+                  <div className="requirements-single-visa-all accordion-all">
+                    {evisa.requirements.map((req, i) => (
+                      <Accordion
+                        key={`${activeIndex}-${i}`}
+                        title={req.section_title}
+                        content={req.content}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </section>
-
-      {form && (
-        <section id="evisa_form" className="py-5">
-          <div className="container">
-            <h2 className="text-center mb-4">{form.title}</h2>
-
-            <form className="evisa-application-form">
-              <div className="row row-gap">
-                {form.fields.map((field, i) => (
-                  <div
-                    key={i}
-                    className={`col-12 ${
-                      field.fullWidth ? "col-md-12" : "col-md-6"
-                    }`}
-                  >
-                    <label>
-                      {field.label}{" "}
-                      {field.required && (
-                        <span style={{ color: "red" }}>*</span>
-                      )}
-                    </label>
-
-                    {(() => {
-                      switch (field.type) {
-                        case "select":
-                          return (
-                            <select
-                              className="form-control"
-                              name={field.name}
-                              required={field.required}
-                            >
-                              <option value="">Select {field.label}</option>
-                              {field.options?.map((opt, idx) => (
-                                <option key={idx} value={opt}>
-                                  {opt}
-                                </option>
-                              ))}
-                            </select>
-                          );
-
-                        case "radio":
-                          return (
-                            <div className="d-flex gap-4 flex-wrap radio-wrapper">
-                              {field.options?.map((opt, idx) => (
-                                <label key={idx}>
-                                  <input
-                                    type="radio"
-                                    name={field.name}
-                                    value={opt}
-                                    required={field.required}
-                                  />{" "}
-                                  {opt}
-                                </label>
-                              ))}
-                            </div>
-                          );
-
-                        case "textarea":
-                          return (
-                            <textarea
-                              className="form-control"
-                              name={field.name}
-                              rows={field.rows || 3}
-                              required={field.required}
-                            ></textarea>
-                          );
-
-                        default:
-                          return (
-                            <input
-                              type={field.type}
-                              name={field.name}
-                              className="form-control"
-                              required={field.required}
-                            />
-                          );
-                      }
-                    })()}
-                  </div>
-                ))}
-              </div>
-
-              <div className="text-center form-button-wrapper">
-                <button type="submit" className="btn-all">
-                  {form.cta_button?.text || "Submit Application"}
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      )}
-
-      <Map />
+      <div className="visa-single-bg-full"></div>
+      {/* Reusable sections */}
+      <ContactUsServices />
+      <ImagePassport />
     </>
+  );
+}
+
+function Accordion({ title, content }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className={`accordion-single ${open ? "open" : ""}`}>
+      <div className="accordion-single__title" onClick={() => setOpen(!open)}>
+        <span>{open ? "−" : "+"}</span>
+        <h3>{title}</h3>
+      </div>
+
+      {open && (
+        <div className="accordion-single__text">
+          {content?.text && <p>{content.text}</p>}
+          {content?.list && (
+            <ul>
+              {content.list.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
