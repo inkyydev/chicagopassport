@@ -92,6 +92,9 @@ export default function Header() {
                 <Link onClick={handleMenu} to="/visa-process">
                   Process
                 </Link>
+                <Link onClick={handleMenu} to="/contact-us">
+                  Contact us
+                </Link>
               </div>
               <div
                 onClick={handleMenu}

@@ -2,7 +2,7 @@ export default function Plans({ isShown }) {
   return (
     <>
       <div class="us-passport-plans plans-wrapper-all">
-        <h3>Speed Of Service</h3>
+        <h3>Select Speed of Service</h3>
         <p>
           Are you 16 years or older and need a passport for the first time? Or
           your adult passport has expired for more than 5 years? You’re on the

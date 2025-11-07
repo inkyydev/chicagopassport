@@ -11,6 +11,9 @@ import VisaProcess from "./scenes/pages/visa-process/VisaProcess";
 import UsPassport from "./scenes/pages/us-passport/UsPassport";
 import Blog from "./scenes/pages/blog/BlogPage";
 import BlogSinglePage from "./scenes/pages/blog/BlogSinglePage";
+import PrivacyPolicy from "./scenes/pages/terms/PrivacyPolicy";
+import TermsConditions from "./scenes/pages/terms/TermsConditions";
+import RefundPolicy from "./scenes/pages/terms/RefundPolicy";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +29,9 @@ const router = createBrowserRouter([
       { path: "/us-passport", element: <UsPassport /> },
       { path: "/blog", element: <Blog /> },
       { path: "/blog/:slug", element: <BlogSinglePage /> },
+      { path: "/privacy-policy", element: <PrivacyPolicy /> },
+      { path: "/terms-conditions", element: <TermsConditions /> },
+      { path: "/refund-policy", element: <RefundPolicy /> },
     ],
   },
 ]);

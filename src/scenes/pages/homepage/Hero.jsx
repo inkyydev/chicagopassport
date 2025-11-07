@@ -28,7 +28,7 @@ export default function Hero() {
             <div className="hero-content">
               <div className="hero-content__span">
                 <img src={glowImg} alt="glow" />
-                <p>Fast, Secure & Easy Passport Solutions</p>
+                <p>Fast, Secure & Easy Passport and Visa Solutions</p>
               </div>
               <h1>Chicago Passport & Visa Expedite Services</h1>
               <h4>
@@ -40,7 +40,8 @@ export default function Hero() {
                 or in person, we get you ready to go without the wait.
               </p>
               <h5>
-                Select Your Service and Passport or Visa Type that you Need:
+                Select Your Service Below: USA Passport or Visa Type that you
+                Need.
               </h5>
               <form>
                 <div className="passport-service-wrapper">
@@ -107,16 +108,79 @@ export default function Hero() {
                         <span>Citizen Of:</span>
                         <select name="citizen">
                           <option value="usa">USA</option>
-                          <option value="china">China</option>
                         </select>
                       </div>
                       <div className="get-visa-options__all--single">
                         <span>Residing in:</span>
-                        <select name="citizen">
-                          <option value="usa">USA</option>
-                          <option value="china">China</option>
+                        <select name="residing_in">
+                          <option value="">Select</option>
+
+                          <option value="alabama">Alabama</option>
+                          <option value="alaska">Alaska</option>
+                          <option value="arizona">Arizona</option>
+                          <option value="arkansas">Arkansas</option>
+                          <option value="california">California</option>
+                          <option value="colorado">Colorado</option>
+                          <option value="connecticut">Connecticut</option>
+                          <option value="delaware">Delaware</option>
+                          <option value="florida">Florida</option>
+                          <option value="georgia">Georgia</option>
+                          <option value="hawaii">Hawaii</option>
+                          <option value="idaho">Idaho</option>
+                          <option value="illinois">Illinois</option>
+                          <option value="indiana">Indiana</option>
+                          <option value="iowa">Iowa</option>
+                          <option value="kansas">Kansas</option>
+                          <option value="kentucky">Kentucky</option>
+                          <option value="louisiana">Louisiana</option>
+                          <option value="maine">Maine</option>
+                          <option value="maryland">Maryland</option>
+                          <option value="massachusetts">Massachusetts</option>
+                          <option value="michigan">Michigan</option>
+                          <option value="minnesota">Minnesota</option>
+                          <option value="mississippi">Mississippi</option>
+                          <option value="missouri">Missouri</option>
+                          <option value="montana">Montana</option>
+                          <option value="nebraska">Nebraska</option>
+                          <option value="nevada">Nevada</option>
+                          <option value="new-hampshire">New Hampshire</option>
+                          <option value="new-jersey">New Jersey</option>
+                          <option value="new-mexico">New Mexico</option>
+                          <option value="new-york">New York</option>
+                          <option value="north-carolina">North Carolina</option>
+                          <option value="north-dakota">North Dakota</option>
+                          <option value="ohio">Ohio</option>
+                          <option value="oklahoma">Oklahoma</option>
+                          <option value="oregon">Oregon</option>
+                          <option value="pennsylvania">Pennsylvania</option>
+                          <option value="rhode-island">Rhode Island</option>
+                          <option value="south-carolina">South Carolina</option>
+                          <option value="south-dakota">South Dakota</option>
+                          <option value="tennessee">Tennessee</option>
+                          <option value="texas">Texas</option>
+                          <option value="utah">Utah</option>
+                          <option value="vermont">Vermont</option>
+                          <option value="virginia">Virginia</option>
+                          <option value="washington">Washington</option>
+                          <option value="west-virginia">West Virginia</option>
+                          <option value="wisconsin">Wisconsin</option>
+                          <option value="wyoming">Wyoming</option>
+
+                          <option value="puerto-rico">Puerto Rico</option>
+                          <option value="guam">Guam</option>
+                          <option value="us-virgin-islands">
+                            U.S. Virgin Islands
+                          </option>
+                          <option value="american-samoa">American Samoa</option>
+                          <option value="northern-mariana-islands">
+                            Northern Mariana Islands
+                          </option>
+                          <option value="district-of-columbia">
+                            District of Columbia (Washington D.C.)
+                          </option>
                         </select>
                       </div>
+
                       <div className="get-visa-options__all--single">
                         <span>Traveling to:</span>
                         <select name="citizen" onChange={handleVisaChange}>
@@ -161,7 +225,10 @@ export default function Hero() {
                   </div>
                 )}
               </form>
-              <span>CALL NOW | Mon-Fri: 8:30am-5:00pm Sat-Sun: Closed</span>
+              <span>
+                CALL NOW | Mon-Fri: 8:30am-5:00pm Sat 10:00am - 2:00pm.
+                Sun/Holidays: Closed
+              </span>
             </div>
           </div>
           <div className="col-12 col-md-6">

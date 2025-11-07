@@ -41,11 +41,11 @@ export default function ProcessSection() {
             </div>
           </div>
         </div>
-        <div className="start-btn-wrapper text-center">
+        {/* <div className="start-btn-wrapper text-center">
           <Link to="/visa-process" className="btn-all">
             Start Your Application
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   );

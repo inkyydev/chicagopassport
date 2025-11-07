@@ -215,6 +215,35 @@ footer .container {
   text-align: center;
   margin-bottom: 0;
   color: #fff;
+  font-size: 14px;
+}
+.copyright-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.terms-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.terms-wrapper a {
+  color: #fff;
+  font-size: 14px;
+}
+.terms-wrapper a:hover {
+  color: #be1e2d;
+}
+@media (min-width: 1024px) {
+  .copyright-p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+.copyright-p img {
+  width: 20px;
 }
 .footer-col-all {
   height: 100%;
@@ -282,7 +311,7 @@ div.footer-info__single p {
   padding: 70px 0 117px;
 }
 .why-choose-title h2 {
-  max-width: 450px;
+  /* max-width: 450px; */
 }
 .why-choose-title p {
   max-width: 461px;
@@ -539,6 +568,18 @@ div.footer-info__single p {
   font-weight: 600;
   color: #1c1c1c;
 }
+/* terms */
+#terms_section {
+  background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 45%);
+  padding-bottom: 80px;
+}
+#terms_section h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+#terms_section .container {
+  max-width: 900px !important;
+}
 
 @media (max-width: 1150px) {
   .header-contact-wrapper a {
@@ -660,6 +701,10 @@ div.footer-info__single p {
   .passport-plan-single {
     flex-basis: calc(50% - 10px);
     max-width: calc(50% - 10px);
+  }
+  .copyright-wrapper {
+    flex-direction: column-reverse;
+    gap: 20px;
   }
 }
 
@@ -791,5 +836,14 @@ div.footer-info__single p {
   .passport-plans {
     padding-bottom: 45px;
     margin-bottom: 40px;
+  }
+  .terms-wrapper a {
+    font-size: 12px;
+  }
+  #terms_section h1 {
+    margin-bottom: 25px;
+  }
+  #terms_section {
+    padding-bottom: 30px;
   }
 }

@@ -14,7 +14,8 @@
 }
 .hero-content__span p {
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 500;
 }
 .hero-content h1 {
   margin: 10px 0 13px;
@@ -31,8 +32,8 @@
 }
 
 .hero-content h5 {
-  font-size: 12px;
-  margin-bottom: 11px;
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 .passport-service-wrapper {
   display: flex;
@@ -119,6 +120,7 @@
   display: inline-block;
   margin-top: 18px;
   font-weight: 500;
+  font-size: 14px;
 }
 
 #process {
@@ -201,6 +203,7 @@
   display: inline-block;
 }
 .get-visa-options__all--single select {
+  padding-right: 30px;
   border: none;
   width: 100%;
   outline: none;
@@ -321,6 +324,7 @@
 
 #testimonials_section {
   padding: 61px 0 40px;
+  overflow: hidden;
 }
 #testimonials_section h2 {
   max-width: 722px;
@@ -342,16 +346,8 @@
   display: flex;
   align-items: center;
 }
-.testimonial-author img {
-  flex-basis: 41px;
-  max-width: 41px;
-  height: 41px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 .testimonial-author div {
   flex: 1;
-  padding-left: 7px;
 }
 .testimonial-author div h5 {
   font-size: 16px;
@@ -579,6 +575,11 @@
   }
   .hero-content h1 {
     font-size: 36px;
+  }
+  .hero-content__span {
+    gap: 3px;
+    width: 100%;
+    padding: 0 5px;
   }
   #process {
     border-top-left-radius: 50px;

@@ -6,6 +6,7 @@ import instagramIcon from "../../assets/instagram-icon.svg";
 import mailIcon from "../../assets/email-icon.svg";
 import phoneIcon from "../../assets/phone-icon.svg";
 import locationIcon from "../../assets/location-icon.svg";
+import footerSmallLogo from "../../assets/footer-small-logo.svg";
 
 export default function Footer() {
   return (
@@ -40,9 +41,9 @@ export default function Footer() {
           <div className="footer-col-all">
             <h4>Working Hours</h4>
             <div className="separator"></div>
-            <p>Mon–Fri: 8:30am–5:00pm</p>
-            <p>Sat–Sun: 10:00am–2:00pm</p>
-            <p>Weekends by Appointment</p>
+            <p>Mon-Fri: 8:30am-5:00pm</p>
+            <p>Sat 10:00am - 2:00pm</p>
+            <p>Sunday by Appointment Only</p>
           </div>
         </div>
         <div className="col-12 col-md-4 col-lg-2">
@@ -87,9 +88,17 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-separator"></div>
-      <p className="copyright-p">
-        © 2025 your awesome website. All rights reserved.
-      </p>
+      <div className="copyright-wrapper">
+        <p className="copyright-p">
+          Copyright By © <img src={footerSmallLogo} alt="logo" /> Chicago
+          Passport & Visa Expedite 2025. All Rights Reserved.
+        </p>
+        <div className="terms-wrapper">
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-conditions">Terms & Conditions</Link>
+          <Link to="/refund-policy">Refund Policy</Link>
+        </div>
+      </div>
     </div>
   );
 }

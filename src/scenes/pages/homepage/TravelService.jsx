@@ -20,7 +20,7 @@ export default function TravelService() {
               <h3>{featured.country}</h3>
               <div className="travel-service-featured-div__link">
                 <Link
-                  to={`/${type === "visa" ? "visas" : "evisas"}/${
+                  to={`/${type === "visa" ? "visas" : "e-visas"}/${
                     featured.slug
                   }`}
                 >
@@ -38,7 +38,7 @@ export default function TravelService() {
                     <h3>{item.country}</h3>
                     <div className="travel-service-single-all__link">
                       <Link
-                        to={`/${type === "visa" ? "visas" : "evisas"}/${
+                        to={`/${type === "visa" ? "visas" : "e-visas"}/${
                           item.slug
                         }`}
                       >

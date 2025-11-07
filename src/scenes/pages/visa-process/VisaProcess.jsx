@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 import WhyChoose from "../../components/WhyChoose";
 import ContactUsServices from "../../components/ContactUsServices";
@@ -71,6 +71,17 @@ export default function VisaProcess() {
                         👉 This step usually takes just 10–15 minutes to
                         complete.
                       </p>
+                      <div className="visa-process-btn-wrapper">
+                        <Link className="btn-all" to="/us-passport">
+                          Passports
+                        </Link>
+                        <Link className="btn-all" to="/visas">
+                          Visas
+                        </Link>
+                        <Link className="btn-all" to="/e-visas">
+                          eVisas
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -96,6 +107,17 @@ export default function VisaProcess() {
                         accuracy and compliance with all government requirements
                         before proceeding to the next stage.
                       </p>
+                      <div className="visa-process-btn-wrapper">
+                        <Link className="btn-all" to="/us-passport">
+                          Passports
+                        </Link>
+                        <Link className="btn-all" to="/visas">
+                          Visas
+                        </Link>
+                        <Link className="btn-all" to="/e-visas">
+                          eVisas
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -121,6 +143,17 @@ export default function VisaProcess() {
                         We’ll notify you at every stage so you know exactly when
                         your documents are ready for collection.
                       </p>
+                      <div className="visa-process-btn-wrapper">
+                        <Link className="btn-all" to="/us-passport">
+                          Passports
+                        </Link>
+                        <Link className="btn-all" to="/visas">
+                          Visas
+                        </Link>
+                        <Link className="btn-all" to="/e-visas">
+                          eVisas
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>

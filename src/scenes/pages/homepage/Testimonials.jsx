@@ -5,75 +5,59 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import starsImg from "../../../assets/starts-img.svg";
-import testimonialsImg from "../../../assets/testimonials-img.png";
+import starsImg4 from "../../../assets/stars-4-img.svg";
 
 export default function TestimonialsSlider() {
   const testimonials = [
     {
-      text: "“Super efficient!! A friend recommended this team. Went in for my passport renewal and I was surprised how well organized and quick the turnaround time was. From start to finish, everything was handled so professionally and worth every penny. Highly recommend!!”",
-      name: "Dev Singh",
-      role: "Manager",
-      image: testimonialsImg,
+      name: "Daniel C.",
+      text: "Absolutely top-notch service! My experience was fantastic. The staff was wonderful; they were incredibly friendly, very knowledgeable, quick, and their information was spot on. Additionally, they were happy to take as many quality photos as I needed until I found one I liked. Finally, their prices were very reasonable given the level of service they offered, and I received my new passport in no time at all.",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      name: "Sarah Kim",
-      role: "Traveler",
-      image: testimonialsImg,
+      name: "Ramon J.",
+      text: "If you need your passport quick, these guys are the go to people. The staff was very kind and respectful. Explained the process and I didn’t have to worry about a thing. Thanks again guys!",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "James Lee",
-      role: "Consultant",
-      image: testimonialsImg,
+      name: "Kacia M.",
+      text: "The fees were very high! However, the service was excellent. The staff was friendly, thorough and I received my expedited passport in a week’s time.",
+      stars: 4,
     },
     {
-      text: "Super efficient!! A friend recommended this team. Went in for my passport renewal and I was surprised how well organized and quick the turnaround time was. From start to finish, everything was handled so professionally and worth every penny. Highly recommend!!”",
-      name: "Priya Patel",
-      role: "Engineer",
-      image: testimonialsImg,
+      name: "Patty C.",
+      text: "I visited last Saturday and was so impressed - my passport book was ready in just 3 days! The staff is fantastic; if you’re not happy with your picture, they’ll retake it for you.",
+      stars: 5,
     },
     {
-      text: "Super efficient!! A friend recommended this team. Went in for my passport renewal and I was surprised how well organized and quick the turnaround time was. From start to finish, everything was handled so professionally and worth every penny. Highly recommend!!”",
-      name: "Liam Carter",
-      role: "Designer",
-      image: testimonialsImg,
+      name: "Mohib S.",
+      text: "Excellent experience! From start to finish, the team was professional, efficient, and incredibly helpful. What could have been stressful turned out smooth and hassle-free.",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "Emma Davis",
-      role: "Photographer",
-      image: testimonialsImg,
+      name: "Trina T.",
+      text: "Very efficient! They even got it faster than promised. I will always recommend them. Thank you!",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "Emma Davis",
-      role: "Photographer",
-      image: testimonialsImg,
+      name: "Bravona W.",
+      text: "Received my passport in less than five business days. The customer service was excellent—very attentive and professional throughout. Highly recommend their services!",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "Emma Davis",
-      role: "Photographer",
-      image: testimonialsImg,
+      name: "Tabatha T.",
+      text: "Their service was very pleasant and swift! Worth every penny. I'll be back in 10 years!",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "Emma Davis",
-      role: "Photographer",
-      image: testimonialsImg,
+      name: "Marisa D.",
+      text: "A bit expensive but definitely worth it! My passport came a week early from when I expected it. Friendly and helpful staff throughout the process.",
+      stars: 5,
     },
     {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "Emma Davis",
-      role: "Photographer",
-      image: testimonialsImg,
-    },
-    {
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,.",
-      name: "Emma Davis",
-      role: "Photographer",
-      image: testimonialsImg,
+      name: "Matthew W.",
+      text: "I needed a passport in 3 days and these folks made it happen! They even tracked it down when the carrier delayed it. Professional, courteous, and friendly service!",
+      stars: 5,
     },
   ];
 
@@ -117,14 +101,15 @@ export default function TestimonialsSlider() {
             <SwiperSlide key={index}>
               <div className="testimonial-card">
                 <div className="stars">
-                  <img src={starsImg} alt="" />
+                  <img
+                    src={item.stars === 4 ? starsImg4 : starsImg}
+                    alt={`${item.stars} stars`}
+                  />
                 </div>
                 <p className="testimonial-text">{item.text}</p>
                 <div className="testimonial-author">
-                  <img src={item.image} alt={item.name} />
                   <div>
                     <h5>{item.name}</h5>
-                    <span>{item.role}</span>
                   </div>
                 </div>
               </div>

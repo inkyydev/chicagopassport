@@ -41,7 +41,7 @@ export default function VisasSingle() {
           </div>
 
           <div id="get_started" className="button-switch-all-passport">
-            <h2>Select Country</h2>
+            <h2>Select Visa Type that you Need</h2>
             <div className="passport-wrapper-all">
               {visas.map((v, index) => (
                 <label key={index} className="passport-radio-label">
@@ -77,6 +77,7 @@ export default function VisasSingle() {
                         title={req.section_title}
                         content={req.content}
                         cta={req.cta_button}
+                        defaultOpen={i === 0}
                       />
                     ))
                   ) : (
@@ -96,8 +97,8 @@ export default function VisasSingle() {
   );
 }
 
-function Accordion({ title, content, cta }) {
-  const [open, setOpen] = useState(false);
+function Accordion({ title, content, cta, defaultOpen }) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div className={`accordion-single ${open ? "open" : ""}`}>

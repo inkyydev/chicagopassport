@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function WhyChoose() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -71,15 +72,15 @@ export default function WhyChoose() {
         <div className="row g-4">
           <div className="col-12 col-md-6">
             <div className="why-choose-title">
-              <h2>Why Choose Chicago Passport?</h2>
+              <h2>Why Choose Chicago Passport & Visa?</h2>
               <p>
                 Our passport specialists assist you through the process from
                 beginning to end, delivering your travel documents securely and
                 quickly.
               </p>
-              <Link className="btn-all" to="/contact-us">
+              <HashLink smooth to="/#hero_section" className="btn-all">
                 Get Started Today
-              </Link>
+              </HashLink>
             </div>
           </div>
 

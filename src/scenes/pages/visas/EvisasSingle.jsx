@@ -28,7 +28,6 @@ export default function EvisasSingle() {
 
   return (
     <>
-      {/* Hero Section */}
       <section id="evisa_single_hero">
         <div className="container">
           <div className="evisa-single-header text-center">
@@ -40,9 +39,8 @@ export default function EvisasSingle() {
             <img src={evisa.hero_image} alt={evisa.hero_title} />
           </div>
 
-          {/* Country Switch */}
           <div id="get_started" className="button-switch-all-passport">
-            <h2>Select eVisa Country</h2>
+            <h2>Select eVisa Type that you Need</h2>
             <div className="passport-wrapper-all">
               {evisas.map((v, index) => (
                 <label key={index} className="passport-radio-label">
@@ -62,7 +60,6 @@ export default function EvisasSingle() {
 
           <Plans />
 
-          {/* Requirements */}
           {evisa.requirements && evisa.requirements.length > 0 && (
             <div className="requirements-wrapper-single-visa">
               <div className="row">
@@ -78,6 +75,7 @@ export default function EvisasSingle() {
                         key={`${activeIndex}-${i}`}
                         title={req.section_title}
                         content={req.content}
+                        defaultOpen={i === 0}
                       />
                     ))}
                   </div>
@@ -88,15 +86,14 @@ export default function EvisasSingle() {
         </div>
       </section>
       <div className="visa-single-bg-full"></div>
-      {/* Reusable sections */}
       <ContactUsServices />
       <ImagePassport />
     </>
   );
 }
 
-function Accordion({ title, content }) {
-  const [open, setOpen] = useState(false);
+function Accordion({ title, content, defaultOpen = false }) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div className={`accordion-single ${open ? "open" : ""}`}>
