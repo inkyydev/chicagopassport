@@ -127,8 +127,11 @@ a:hover {
 .main-nav__items--links {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 30px;
   justify-content: center;
+}
+.main-nav__items--links a {
+  font-size: 14px;
 }
 .main-nav__account,
 .main-nav__logo {
@@ -140,7 +143,9 @@ a:hover {
   align-items: center;
   gap: 10px;
 }
+.main-nav__account button,
 .main-nav__account a {
+  background: none;
   width: 52px;
   height: 52px;
   display: flex;

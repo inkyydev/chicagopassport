@@ -1,25 +1,16 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { visas } from "../../../data";
 
 import ImagePassport from "../../components/ImagePassport";
 import ContactUsServices from "../../components/ContactUsServices";
-import Plans from "../../components/Plans";
+import SelectVisaType from "../../components/SelectVisaType";
+import RequirementsAccordion from "../../components/RequirementsAccordion";
 
 export default function VisasSingle() {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+  const [activeVisaIndex, setActiveVisaIndex] = useState(0);
+  const [activePassportIndex, setActivePassportIndex] = useState(0);
 
-  const initialIndex = visas.findIndex((v) => v.slug === slug);
-  const [activeIndex, setActiveIndex] = useState(
-    initialIndex >= 0 ? initialIndex : 0
-  );
-
-  useEffect(() => {
-    navigate(`/visas/${visas[activeIndex].slug}`, { replace: true });
-  }, [activeIndex]);
-
-  const visa = visas[activeIndex];
+  const visa = visas[activeVisaIndex];
 
   if (!visa) return <p>Visa not found.</p>;
 
@@ -40,97 +31,24 @@ export default function VisasSingle() {
             </div>
           </div>
 
-          <div id="get_started" className="button-switch-all-passport">
-            <h2>Select Visa Type that you Need</h2>
-            <div className="passport-wrapper-all">
-              {visas.map((v, index) => (
-                <label key={index} className="passport-radio-label">
-                  <input
-                    type="radio"
-                    name="visa-country"
-                    checked={activeIndex === index}
-                    onChange={() => setActiveIndex(index)}
-                  />
-                  <div>
-                    <span>{v.country}</span>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </div>
-          <Plans />
+          <SelectVisaType
+            activePassportIndex={activePassportIndex}
+            setActivePassportIndex={setActivePassportIndex}
+            title="Select Visa Type that you Need"
+          />
 
-          <div className="requirements-wrapper-single-visa">
-            <div className="row">
-              <div className="col-12 col-md-5">
-                <div className="requirements-single-visa-heading">
-                  <h2>{visas[activeIndex].country} Requirements</h2>
-                </div>
-              </div>
-
-              <div className="col-12 col-md-7">
-                <div className="requirements-single-visa-all accordion-all">
-                  {visa.requirements && visa.requirements.length > 0 ? (
-                    visa.requirements.map((req, i) => (
-                      <Accordion
-                        key={`${activeIndex}-${i}`}
-                        title={req.section_title}
-                        content={req.content}
-                        cta={req.cta_button}
-                        defaultOpen={i === 0}
-                      />
-                    ))
-                  ) : (
-                    <p>No requirements available for this visa.</p>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
+          <RequirementsAccordion
+            country={visa.country}
+            requirements={visa.requirements}
+            activeVisaIndex={activeVisaIndex}
+          />
         </div>
       </section>
+
       <div className="visa-single-bg-full"></div>
 
       <ContactUsServices />
       <ImagePassport />
     </>
-  );
-}
-
-function Accordion({ title, content, cta, defaultOpen }) {
-  const [open, setOpen] = useState(defaultOpen);
-
-  return (
-    <div className={`accordion-single ${open ? "open" : ""}`}>
-      <div className="accordion-single__title" onClick={() => setOpen(!open)}>
-        <span>{open ? "−" : "+"}</span>
-        <h3>{title}</h3>
-      </div>
-
-      {open && (
-        <div className="accordion-single__text">
-          {typeof content === "string" && <p>{content}</p>}
-
-          {typeof content === "object" && (
-            <>
-              {content.text && <p>{content.text}</p>}
-              {content.list && (
-                <ul>
-                  {content.list.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </>
-          )}
-
-          {cta && (
-            <a href={cta.link} className="btn-all mt-2">
-              {cta.text}
-            </a>
-          )}
-        </div>
-      )}
-    </div>
   );
 }

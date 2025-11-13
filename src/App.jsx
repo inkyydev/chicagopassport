@@ -14,6 +14,7 @@ import BlogSinglePage from "./scenes/pages/blog/BlogSinglePage";
 import PrivacyPolicy from "./scenes/pages/terms/PrivacyPolicy";
 import TermsConditions from "./scenes/pages/terms/TermsConditions";
 import RefundPolicy from "./scenes/pages/terms/RefundPolicy";
+import UkEtaVisa from "./scenes/pages/visas/UkEtaVisa";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: "/privacy-policy", element: <PrivacyPolicy /> },
       { path: "/terms-conditions", element: <TermsConditions /> },
       { path: "/refund-policy", element: <RefundPolicy /> },
+      { path: "/uk-eta-vise", element: <UkEtaVisa /> },
     ],
   },
 ]);

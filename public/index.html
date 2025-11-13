@@ -21,5 +21,21 @@
   </head>
   <body>
     <div id="root"></div>
+    <div id="google_translate_element" style="display: none"></div>
+
+    <script>
+      function googleTranslateInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "es",
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateInit"></script>
   </body>
 </html>

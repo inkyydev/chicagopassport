@@ -1,3 +1,10 @@
+.uk-visa-section .visa-single-header h3 {
+  text-align: center;
+  margin: 20px 0 25px;
+}
+.uk-visa-section .visa-single-header p {
+  max-width: 650px;
+}
 .visas-section-all {
   background: linear-gradient(to bottom, #e1f1fd, rgba(225, 241, 253, 0) 45%);
   padding-bottom: 65px;

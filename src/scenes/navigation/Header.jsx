@@ -1,22 +1,54 @@
-import { useEffect } from "react";
-
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import phoneIcon from "../../assets/phone-icon.svg";
 import mailIcon from "../../assets/email-icon.svg";
 import logo from "../../assets/logo.svg";
 import accountIcon from "../../assets/account-icon.svg";
-import { useState } from "react";
+
+const setCookie = (name, value, days) => {
+  let expires = "";
+  if (days) {
+    const date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+};
+
+const eraseCookie = (name) => {
+  document.cookie = name + "=; Max-Age=0; path=/;";
+};
+
+const getInitialLang = () => {
+  if (typeof document === "undefined") return "EN";
+  const match = document.cookie.match(/googtrans=([^;]+)/);
+  if (match && match[1].includes("/es")) return "ES";
+  return "EN";
+};
 
 export default function Header() {
   const [isActive, setIsActive] = useState(false);
+  const [currentLang, setCurrentLang] = useState(getInitialLang);
 
   const handleMenu = () => {
     setIsActive((prev) => !prev);
   };
 
+  const toggleLanguage = () => {
+    if (currentLang === "EN") {
+      setCookie("googtrans", "/en/es", 1);
+      setCurrentLang("ES");
+    } else {
+      eraseCookie("googtrans");
+      setCurrentLang("EN");
+    }
+
+    window.location.reload();
+  };
+
   useEffect(() => {
-    const body = document.querySelector("body");
+    const body = document.body;
 
     if (isActive && window.innerWidth < 1024) {
       body.classList.add("active");
@@ -39,6 +71,7 @@ export default function Header() {
       body.classList.remove("active");
     };
   }, [isActive]);
+
   return (
     <div className="header-wrapper">
       <div className="header-info-bar">
@@ -59,7 +92,7 @@ export default function Header() {
                   312-925-3278
                 </a>
                 <a href="mailto:info@chichagopassport-visa.com">
-                  <img src={mailIcon} alt="phone" />
+                  <img src={mailIcon} alt="mail" />
                   INFO@CHICAGOPASSPORT-VISA.COM
                 </a>
               </div>
@@ -67,6 +100,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+
       <div className="header-main-nav">
         <div className="container">
           <div className="main-nav">
@@ -75,6 +109,7 @@ export default function Header() {
                 <img src={logo} alt="logo" />
               </Link>
             </div>
+
             <div className="main-nav__items">
               <div
                 className={`main-nav__items--links ${isActive ? "active" : ""}`}
@@ -88,7 +123,9 @@ export default function Header() {
                 <Link onClick={handleMenu} to="/e-visas">
                   E-Visas
                 </Link>
-                <Link onClick={handleMenu}>UK ETA Visa</Link>
+                <Link onClick={handleMenu} to="/uk-eta-vise">
+                  UK ETA Visa
+                </Link>
                 <Link onClick={handleMenu} to="/visa-process">
                   Process
                 </Link>
@@ -96,6 +133,7 @@ export default function Header() {
                   Contact us
                 </Link>
               </div>
+
               <div
                 onClick={handleMenu}
                 className={`mobile-hamburger ${isActive ? "active" : ""}`}
@@ -104,11 +142,15 @@ export default function Header() {
                 <span className="line-2"></span>
               </div>
             </div>
+
             <div className="main-nav__account">
               <Link>
                 <img src={accountIcon} alt="account" />
               </Link>
-              <Link>EN</Link>
+
+              <button className="lang-toggle" onClick={toggleLanguage}>
+                {currentLang}
+              </button>
             </div>
           </div>
         </div>

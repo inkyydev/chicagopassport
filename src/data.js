@@ -20,6 +20,33 @@ import busyLetter from "./assets/busi_letter.pdf";
 import authorizationLetter from "./assets/AUTHORIZATIONLETTER.pdf";
 import serviceOrder from "./assets/form.pdf";
 
+export const ukEtaRequirements = [
+  {
+    requirements: [
+      {
+        section_title: "Tourist E-Visa",
+        content: {
+          text: "For travelers visiting the United Kingdom for tourism:",
+          list: [
+            "Scanned Passport",
+            "Digital Passport Photograph - meeting e-visa (ETA) specifications",
+          ],
+        },
+      },
+      {
+        section_title: "Business E-Visa",
+        content: {
+          text: "For travelers visiting the United Kingdom for business purposes:",
+          list: [
+            "Scanned Passport",
+            "Digital Passport Photograph – per e-visa (ETA) requirements",
+          ],
+        },
+      },
+    ],
+  },
+];
+
 export const visas = [
   {
     id: 1,

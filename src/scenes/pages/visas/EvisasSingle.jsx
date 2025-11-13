@@ -1,28 +1,16 @@
-import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { evisas } from "../../../data";
-import Plans from "../../components/Plans";
+import SelectVisaType from "../../components/SelectVisaType";
 
 import ImagePassport from "../../components/ImagePassport";
 import ContactUsServices from "../../components/ContactUsServices";
-import Map from "../../components/Map";
+import RequirementsAccordion from "../../components/RequirementsAccordion";
 
 export default function EvisasSingle() {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+  const [activeVisaIndex, setActiveVisaIndex] = useState(0);
+  const [activePassportIndex, setActivePassportIndex] = useState(0);
 
-  // Find initial index based on slug
-  const initialIndex = evisas.findIndex((v) => v.slug === slug);
-  const [activeIndex, setActiveIndex] = useState(
-    initialIndex >= 0 ? initialIndex : 0
-  );
-
-  // Update URL on switch
-  useEffect(() => {
-    navigate(`/e-visas/${evisas[activeIndex].slug}`, { replace: true });
-  }, [activeIndex]);
-
-  const evisa = evisas[activeIndex];
+  const evisa = evisas[activeVisaIndex];
 
   if (!evisa) return <p>eVisa not found.</p>;
 
@@ -39,81 +27,22 @@ export default function EvisasSingle() {
             <img src={evisa.hero_image} alt={evisa.hero_title} />
           </div>
 
-          <div id="get_started" className="button-switch-all-passport">
-            <h2>Select eVisa Type that you Need</h2>
-            <div className="passport-wrapper-all">
-              {evisas.map((v, index) => (
-                <label key={index} className="passport-radio-label">
-                  <input
-                    type="radio"
-                    name="evisa-country"
-                    checked={activeIndex === index}
-                    onChange={() => setActiveIndex(index)}
-                  />
-                  <div>
-                    <span>{v.country}</span>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </div>
+          <SelectVisaType
+            activePassportIndex={activePassportIndex}
+            setActivePassportIndex={setActivePassportIndex}
+            title="Select Visa Type that you Need"
+          />
 
-          <Plans />
-
-          {evisa.requirements && evisa.requirements.length > 0 && (
-            <div className="requirements-wrapper-single-visa">
-              <div className="row">
-                <div className="col-12 col-md-6">
-                  <div className="requirements-single-visa-heading requirements-single-evisa-heading">
-                    <h2>{evisa.country} Requirements</h2>
-                  </div>
-                </div>
-                <div className="col-12 col-md-6">
-                  <div className="requirements-single-visa-all accordion-all">
-                    {evisa.requirements.map((req, i) => (
-                      <Accordion
-                        key={`${activeIndex}-${i}`}
-                        title={req.section_title}
-                        content={req.content}
-                        defaultOpen={i === 0}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          <RequirementsAccordion
+            country={evisa.country}
+            requirements={evisa.requirements}
+            activeVisaIndex={activeVisaIndex}
+          />
         </div>
       </section>
       <div className="visa-single-bg-full"></div>
       <ContactUsServices />
       <ImagePassport />
     </>
-  );
-}
-
-function Accordion({ title, content, defaultOpen = false }) {
-  const [open, setOpen] = useState(defaultOpen);
-
-  return (
-    <div className={`accordion-single ${open ? "open" : ""}`}>
-      <div className="accordion-single__title" onClick={() => setOpen(!open)}>
-        <span>{open ? "−" : "+"}</span>
-        <h3>{title}</h3>
-      </div>
-
-      {open && (
-        <div className="accordion-single__text">
-          {content?.text && <p>{content.text}</p>}
-          {content?.list && (
-            <ul>
-              {content.list.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-    </div>
   );
 }

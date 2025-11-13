@@ -7,7 +7,7 @@ import ImagePassport from "../../components/ImagePassport";
 import usPassportImg from "../../../assets/us-passport-img.png";
 
 import { passportSections } from "../../../data";
-import Plans from "../../components/Plans";
+import SelectVisaType from "../../components/SelectVisaType";
 
 import "./UsPassport.css";
 
@@ -29,25 +29,10 @@ export default function UsPassport() {
             </p>
             <img src={usPassportImg} alt="us passport" />
           </div>
-          <div className="button-switch-all-passport">
-            <h2>Select passport type</h2>
-            <div className="us-passport-type-wrapper passport-wrapper-all">
-              {passportSections.map((item, index) => (
-                <label key={index} className="passport-radio-label">
-                  <input
-                    type="radio"
-                    name="passport-section"
-                    checked={activeIndex === index}
-                    onChange={() => setActiveIndex(index)}
-                  />
-                  <div>
-                    <span>{item.title}</span>
-                  </div>
-                </label>
-              ))}
-            </div>
-          </div>
-          <Plans isShown={activeIndex === 1 || activeIndex === 4} />
+          <SelectVisaType
+            activePassportIndex={activeIndex}
+            setActivePassportIndex={setActiveIndex}
+          />
           <div className="switch-content-all-passport">
             <div className="row">
               <div className="col-12 col-md-5">
