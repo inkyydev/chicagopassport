@@ -586,7 +586,34 @@ div.footer-info__single p {
   max-width: 900px !important;
 }
 
-@media (max-width: 1150px) {
+@media (min-width: 1024px) and (max-width: 1700px) {
+  .header-wrapper {
+    padding-bottom: 40px;
+  }
+  .main-nav {
+    margin-top: 20px;
+  }
+  .header-contact-wrapper a {
+    font-size: 14px;
+  }
+  .header-info-bar p {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 1250px) {
+  .container {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 20px;
+  }
   .header-contact-wrapper a {
     font-size: 14px;
   }
@@ -597,22 +624,10 @@ div.footer-info__single p {
 }
 
 @media (max-width: 1024px) {
-  h1 {
-    font-size: 42px;
-  }
-  h2 {
-    font-size: 36px;
-  }
-  h3 {
-    font-size: 20px;
-  }
   .btn-all {
     font-size: 16px;
   }
-  .container {
-    padding-left: 40px !important;
-    padding-right: 40px !important;
-  }
+
   .main-nav__items--links {
     position: fixed;
     top: 85px;

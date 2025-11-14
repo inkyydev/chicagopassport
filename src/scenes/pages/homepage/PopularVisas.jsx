@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import indiaImg from "../../../assets/indian-visa-bg.png";
 import brazilImg from "../../../assets/brazil-visa-bg.png";
 import chinaImg from "../../../assets/china-visa-bg.png";
@@ -8,18 +10,22 @@ export default function PopularVisas() {
     {
       title: "Indian Visa",
       image: indiaImg,
+      url: "/e-visas/india-evisa",
     },
     {
       title: "Brazil Visa",
       image: brazilImg,
+      url: "/visas/brazil",
     },
     {
       title: "China Visa",
       image: chinaImg,
+      url: "/visas/china",
     },
     {
       title: "Kenya Visa",
       image: kenyaImg,
+      url: "/e-visas/kenya-evisa",
     },
   ];
 
@@ -35,12 +41,14 @@ export default function PopularVisas() {
         <div className="row g-4">
           {visas.map((visa, index) => (
             <div className="col-12 col-md-3" key={index}>
-              <div className="visa-card">
-                <img src={visa.image} alt={visa.title} />
-                <div className="visa-info">
-                  <h3>{visa.title}</h3>
+              <Link to={visa.url}>
+                <div className="visa-card">
+                  <img src={visa.image} alt={visa.title} />
+                  <div className="visa-info">
+                    <h3>{visa.title}</h3>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

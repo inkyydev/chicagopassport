@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { visas } from "../../../data";
 
 import ImagePassport from "../../components/ImagePassport";
@@ -7,8 +8,19 @@ import SelectVisaType from "../../components/SelectVisaType";
 import RequirementsAccordion from "../../components/RequirementsAccordion";
 
 export default function VisasSingle() {
-  const [activeVisaIndex, setActiveVisaIndex] = useState(0);
+  const { slug } = useParams();
+  const navigate = useNavigate();
+
+  const initialIndex = visas.findIndex((v) => v.slug === slug);
+
+  const [activeVisaIndex, setActiveVisaIndex] = useState(
+    initialIndex >= 0 ? initialIndex : 0
+  );
   const [activePassportIndex, setActivePassportIndex] = useState(0);
+
+  useEffect(() => {
+    navigate(`/visas/${visas[activeVisaIndex].slug}`, { replace: true });
+  }, [activeVisaIndex]);
 
   const visa = visas[activeVisaIndex];
 

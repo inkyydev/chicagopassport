@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { evisas } from "../../../data";
 import SelectVisaType from "../../components/SelectVisaType";
 
@@ -7,8 +8,19 @@ import ContactUsServices from "../../components/ContactUsServices";
 import RequirementsAccordion from "../../components/RequirementsAccordion";
 
 export default function EvisasSingle() {
-  const [activeVisaIndex, setActiveVisaIndex] = useState(0);
+  const { slug } = useParams();
+  const navigate = useNavigate();
+
+  const initialIndex = evisas.findIndex((v) => v.slug === slug);
+
+  const [activeVisaIndex, setActiveVisaIndex] = useState(
+    initialIndex >= 0 ? initialIndex : 0
+  );
   const [activePassportIndex, setActivePassportIndex] = useState(0);
+
+  useEffect(() => {
+    navigate(`/e-visas/${evisas[activeVisaIndex].slug}`, { replace: true });
+  }, [activeVisaIndex]);
 
   const evisa = evisas[activeVisaIndex];
 
