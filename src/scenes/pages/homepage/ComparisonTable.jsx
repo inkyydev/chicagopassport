@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import checkIcon from "../../../assets/check-icon.svg";
 import xIcon from "../../../assets/x-icon.svg";
-import chicagoLogo from "../../../assets/chicago-logo.svg";
+import chicagoLogo from "../../../assets/logo.svg";
 
 export default function ComparisonTable() {
   const rows = [
